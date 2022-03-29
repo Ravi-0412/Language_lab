@@ -1,0 +1,24 @@
+// words with vowel less than 2
+
+[\n' '][a-zA-Z]+  { int count=0;
+    int len= strlen(yytext);
+    for(int i=0;i<len-1;i++)
+    { 
+if(yytext[i]=='a'||yytext[i]=='e'||yytext[i]=='i'||yytext[i]=='o'||yytext[i]=='u')
+        {count+=1;}
+    }
+    if(count<2)
+    {
+        less_2+=1;
+        printf("%s",yytext);
+    }
+} 
+
+
+// words with length less than 5
+
+[\n' '][a-zA-Z]+  { 
+    int len= strlen(yytext);
+    if(len-1<5)
+    {less_5+=1;
+    printf("%s",yytext);}
